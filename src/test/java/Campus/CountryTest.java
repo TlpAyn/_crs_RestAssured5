@@ -72,7 +72,7 @@ public class CountryTest {
 
                 .then()
                 .log().body()
-                .statusCode(201)
+                .statusCode(2010)
                 .extract().path("id");
         ;
 
@@ -96,7 +96,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(400)
+                .statusCode(4000)
                 .body("message", containsString("already"))  // gelen body deki...
         ;
     }
@@ -121,7 +121,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(200)
+                .statusCode(2000)
                 .body("name", equalTo(countryName))
         ;
     }
@@ -139,7 +139,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(200)
+                .statusCode(2000)
         ;
 
     }
@@ -157,7 +157,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(400)
+                .statusCode(4000)
                 .body("message",equalTo("Country not found"))
         ;
 
