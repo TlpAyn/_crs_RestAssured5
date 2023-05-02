@@ -43,7 +43,7 @@ public class CountryTest {
 
                 .then()
                 //.log().all()
-                .statusCode(2000)
+                .statusCode(200)
                 .extract().response().getDetailedCookies()
         ;
 
@@ -72,7 +72,7 @@ public class CountryTest {
 
                 .then()
                 .log().body()
-                .statusCode(2010)
+                .statusCode(201)
                 .extract().path("id");
         ;
 
@@ -96,7 +96,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(4000)
+                .statusCode(400)
                 .body("message", containsString("already"))  // gelen body deki...
         ;
     }
@@ -121,7 +121,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(2000)
+                .statusCode(200)
                 .body("name", equalTo(countryName))
         ;
     }
@@ -139,7 +139,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(2000)
+                .statusCode(200)
         ;
 
     }
@@ -157,7 +157,7 @@ public class CountryTest {
 
                 .then()
                 .log().body() // gelen body yi log olarak göster
-                .statusCode(4000)
+                .statusCode(400) // jenkins için hatalı test için 500 yapıldı normalde 400
                 .body("message",equalTo("Country not found"))
         ;
 

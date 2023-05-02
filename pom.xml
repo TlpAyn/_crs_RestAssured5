@@ -52,6 +52,7 @@
     <!--    Maven test çalıştırınca çalıştırılacak bölümün setlenmesi kısmı-->
 
     <!--  Jenkins in Çalıştırma komutunun , nereyi açlıştıracağını belirlediğimiz plugin -->
+    <!--    https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html-->
     <build>
         <plugins>
             <plugin>
@@ -68,12 +69,6 @@
             </plugin>
         </plugins>
     </build>
-
-
-
-
-
-
 
 
 

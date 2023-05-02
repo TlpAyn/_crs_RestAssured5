@@ -10,11 +10,10 @@ public class Location {
     String countryabbreviation;
     ArrayList<Place> places;
 
-
-
     public String getPostcode() {
         return postcode;
     }
+
     @JsonProperty("post code")
     public void setPostcode(String postcode) {
         this.postcode = postcode;
@@ -31,6 +30,7 @@ public class Location {
     public String getCountryabbreviation() {
         return countryabbreviation;
     }
+
     @JsonProperty("country abbreviation")
     public void setCountryabbreviation(String countryabbreviation) {
         this.countryabbreviation = countryabbreviation;

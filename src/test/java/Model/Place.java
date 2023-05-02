@@ -12,7 +12,8 @@ public class Place {
     public String getPlacename() {
         return placename;
     }
-@JsonProperty("place name")
+
+    @JsonProperty("place name")
     public void setPlacename(String placename) {
         this.placename = placename;
     }
@@ -33,11 +34,12 @@ public class Place {
         this.state = state;
     }
 
-    @JsonProperty("state abbreviation")
     public String getStateabbreviation() {
         return stateabbreviation;
     }
 
+
+    @JsonProperty("state abbreviation")
     public void setStateabbreviation(String stateabbreviation) {
         this.stateabbreviation = stateabbreviation;
     }
