@@ -14,6 +14,22 @@ public class Tasks {
      * expect status 203
      * expect content type TEXT
      */
+    @Test
+    public void task2d()
+
+    {
+        given()
+                .when()
+                .get("https://httpstat.us/203")
+                .then()
+                .log().all()
+                .statusCode(203)
+                .contentType(ContentType.TEXT)
+
+                ;
+
+
+    }
 
     @Test
     public void task2()
@@ -36,11 +52,31 @@ public class Tasks {
      * expect status 200
      * Converting Into POJO
      */
+@Test
+public void task1e()
+{
 
+    ToDo todo =
+    given()
+
+            .when()
+            .get("https://jsonplaceholder.typicode.com/todos/2")
+            .then()
+            .log().body()
+            .statusCode(200)
+            .extract().body().as(ToDo.class)
+
+            ;
+
+    System.out.println(todo);
+    System.out.println(todo.getTitle());
+
+
+}
     @Test
     public void task1()
     {
-         ToDo todo=
+
          given()
                  .when()
                  .get("https://jsonplaceholder.typicode.com/todos/2")
@@ -48,11 +84,11 @@ public class Tasks {
                  .then()
                  .log().body()
                  .statusCode(200)
-                 .extract().body().as(ToDo.class)
+                 .contentType(ContentType.JSON)
          ;
 
-        System.out.println("todo = " + todo);
-        System.out.println("todo.getTitle() = " + todo.getTitle());
+
+
     }
 
 
@@ -63,6 +99,26 @@ public class Tasks {
      * expect content type JSON
      * expect title in response body to be "quis ut nam facilis et officia qui"
      */
+
+    @Test
+    public void task3e()
+    {
+
+        given()
+                .when()
+                .get("https://jsonplaceholder.typicode.com/todos/2")
+
+                .then()
+                .log().all()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .extract().body().as(ToDo.class)
+                .body("title", equalTo("quis ut nam facilis et officia qui"))
+
+        ;
+        Assert.assertEquals(todo2.getTitle(),"quis ut nam facilis et officia qui");
+
+    }
 
     @Test
     public void task3()
